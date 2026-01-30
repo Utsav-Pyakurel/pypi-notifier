@@ -1,4 +1,3 @@
-
 permissions:
   contents: read
 
@@ -14,16 +13,16 @@ jobs:
   test:
     runs-on: ubuntu-latest
     steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+
       - name: Setup PSE
         uses: invisirisk/pse-action@latest
         with:
           api_url: "https://app.stage.invisirisk.com"
           app_token: ${{ secrets.IR_API_KEY }}
-
-      - uses: actions/checkout@v4
-        with:
-          token: ${{ secrets.GITHUB_TOKEN }}
-
 
       - name: Setup Python
         uses: actions/setup-python@v4
