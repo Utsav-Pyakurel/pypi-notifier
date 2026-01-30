@@ -1,3 +1,7 @@
+
+permissions:
+  contents: read
+
 name: pushes
 
 on:
@@ -6,8 +10,6 @@ on:
   pull_request_target:
 
 
-permissions:
-  contents: read
 jobs:
   test:
     runs-on: ubuntu-latest
